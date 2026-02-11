@@ -27,7 +27,7 @@ This section is prepared for English translations of the documentation.
 - `midi2kit.md`: added (translation pending)
 - `midi2kit-competitive-comparison.md`: added (translation pending)
 - `ump.md`: expanded (implementer-focused draft)
-- `initiator-responder.md`: added (translation pending)
+- `initiator-responder.md`: expanded (implementer-focused draft)
 - `midi2-support-status-2026-02.md`: added (research snapshot, translation pending)
 - `news.md`: added (translation pending)
 - Other pages: translation in progress
