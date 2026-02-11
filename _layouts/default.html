@@ -16,31 +16,35 @@
     <style>
       :root {
         color-scheme: light;
-        --bg: #fbfaf7;
-        --text: #1f2937;
-        --muted: #6b7280;
-        --line: #d1d5db;
-        --accent: #0f766e;
-        --accent-soft: #dff5f1;
+        --bg-top: #f2f8fb;
+        --bg-bottom: #fbfcfe;
+        --surface: #ffffffd9;
+        --surface-strong: #ffffff;
+        --text: #12212d;
+        --muted: #5f7285;
+        --line: #d8e1ea;
+        --accent: #0d9488;
+        --accent-soft: #d8f3ef;
+        --link: #0b63b5;
       }
 
       body {
         margin: 0;
-        background: linear-gradient(180deg, #f5f7f7 0%, #fbfaf7 240px);
+        background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 280px);
         color: var(--text);
         font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
         line-height: 1.7;
       }
 
       .wrap {
-        max-width: 860px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 22px;
       }
 
       header {
         border-bottom: 1px solid var(--line);
-        background: #ffffffc0;
+        background: #ffffffd6;
         backdrop-filter: blur(8px);
       }
 
@@ -56,6 +60,7 @@
         color: var(--text);
         font-weight: 700;
         text-decoration: none;
+        letter-spacing: 0.01em;
       }
 
       nav {
@@ -66,35 +71,57 @@
       nav a {
         color: var(--accent);
         text-decoration: none;
-        font-weight: 600;
-        font-size: 0.95rem;
+        font-weight: 700;
+        font-size: 0.92rem;
+        padding: 5px 10px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+      }
+
+      nav a:hover {
+        border-color: #b9e9e2;
+        background: #effcf9;
       }
 
       main {
-        padding: 28px 0 40px;
+        padding: 24px 0 40px;
       }
 
       .layout-grid {
         display: grid;
-        grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
-        gap: 24px;
+        grid-template-columns: minmax(250px, 290px) minmax(0, 1fr);
+        gap: 26px;
       }
 
       .sidebar {
         position: sticky;
-        top: 82px;
+        top: 78px;
         align-self: start;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: #ffffffd9;
-        padding: 14px 14px 10px;
+        border: 1px solid #d6e0ea;
+        border-radius: 14px;
+        background: var(--surface);
+        box-shadow: 0 8px 28px rgba(20, 52, 74, 0.08);
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 120px);
+      }
+
+      .sidebar-top {
+        flex: 1;
+      }
+
+      .sidebar-bottom {
+        margin-top: 12px;
+        border-top: 1px solid #e6edf3;
+        padding-top: 12px;
       }
 
       .sidebar h2 {
-        margin: 0 0 8px;
+        margin: 0 0 7px;
         color: var(--muted);
-        font-size: 0.85rem;
-        letter-spacing: 0.06em;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
       }
 
       .side-list {
@@ -112,21 +139,62 @@
         text-decoration: none;
         border-radius: 8px;
         padding: 6px 8px;
-        color: #0f5ea8;
+        color: var(--link);
+        font-size: 0.92rem;
       }
 
       .side-list a:hover {
-        background: #ecfeff;
+        background: #edf7ff;
       }
 
       .side-list a.is-active {
-        color: #0f766e;
-        background: #dff5f1;
+        color: #0b6d66;
+        background: var(--accent-soft);
         font-weight: 700;
+      }
+
+      .external-links {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .external-links li {
+        margin: 0;
+      }
+
+      .external-links a {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--link);
+        text-decoration: none;
+        border-radius: 8px;
+        padding: 6px 8px;
+      }
+
+      .external-links a:hover {
+        background: #edf7ff;
       }
 
       .content {
         min-width: 0;
+      }
+
+      .content-card {
+        border: 1px solid #d6e0ea;
+        border-radius: 14px;
+        background: var(--surface-strong);
+        box-shadow: 0 8px 28px rgba(20, 52, 74, 0.08);
+        padding: 22px 26px 24px;
+      }
+
+      .content-card h1 {
+        margin-top: 0;
+        letter-spacing: 0.01em;
+      }
+
+      .content-card h2 {
+        margin-top: 1.8em;
       }
 
       .lang-badge {
@@ -142,7 +210,7 @@
       }
 
       a {
-        color: #0f5ea8;
+        color: var(--link);
       }
 
       code {
@@ -159,9 +227,10 @@
 
       .foot {
         padding: 16px 0 24px;
+        text-align: center;
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 980px) {
         .layout-grid {
           grid-template-columns: 1fr;
           gap: 16px;
@@ -169,6 +238,17 @@
 
         .sidebar {
           position: static;
+          min-height: 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 0 14px;
+        }
+
+        .content-card {
+          padding: 18px 16px 20px;
         }
       }
     </style>
@@ -186,41 +266,56 @@
 
     <main class="wrap">
       <div class="layout-grid">
-        {% if page.url == '/ja/' or page.url contains '/ja/' %}
         <aside class="sidebar" aria-label="Index">
-          <h2>INDEX</h2>
-          <ul class="side-list">
-            <li><a href="{{ '/ja/' | relative_url }}" {% if page.url == '/ja/' %}class="is-active"{% endif %}>ドキュメント INDEX</a></li>
-            <li><a href="{{ '/ja/fundamentals/' | relative_url }}" {% if page.url == '/ja/fundamentals/' %}class="is-active"{% endif %}>MIDI 2.0 基礎概念</a></li>
-            <li><a href="{{ '/ja/ump/' | relative_url }}" {% if page.url == '/ja/ump/' %}class="is-active"{% endif %}>UMP</a></li>
-            <li><a href="{{ '/ja/ci-profiles/' | relative_url }}" {% if page.url == '/ja/ci-profiles/' %}class="is-active"{% endif %}>MIDI-CI</a></li>
-            <li><a href="{{ '/ja/profiles/' | relative_url }}" {% if page.url == '/ja/profiles/' %}class="is-active"{% endif %}>Profiles</a></li>
-            <li><a href="{{ '/ja/property-exchange/' | relative_url }}" {% if page.url == '/ja/property-exchange/' %}class="is-active"{% endif %}>Property Exchange</a></li>
-            <li><a href="{{ '/ja/migration-midi1-to-midi2/' | relative_url }}" {% if page.url == '/ja/migration-midi1-to-midi2/' %}class="is-active"{% endif %}>MIDI 1.0 -> 2.0</a></li>
-          </ul>
+          <div class="sidebar-top">
+            <h2>INDEX</h2>
+            {% if page.url == '/ja/' or page.url contains '/ja/' %}
+            <ul class="side-list">
+              <li><a href="{{ '/ja/' | relative_url }}" {% if page.url == '/ja/' %}class="is-active"{% endif %}>ドキュメント INDEX</a></li>
+              <li><a href="{{ '/ja/fundamentals/' | relative_url }}" {% if page.url == '/ja/fundamentals/' %}class="is-active"{% endif %}>MIDI 2.0 基礎概念</a></li>
+              <li><a href="{{ '/ja/ump/' | relative_url }}" {% if page.url == '/ja/ump/' %}class="is-active"{% endif %}>UMP</a></li>
+              <li><a href="{{ '/ja/ci-profiles/' | relative_url }}" {% if page.url == '/ja/ci-profiles/' %}class="is-active"{% endif %}>MIDI-CI</a></li>
+              <li><a href="{{ '/ja/profiles/' | relative_url }}" {% if page.url == '/ja/profiles/' %}class="is-active"{% endif %}>Profiles</a></li>
+              <li><a href="{{ '/ja/property-exchange/' | relative_url }}" {% if page.url == '/ja/property-exchange/' %}class="is-active"{% endif %}>Property Exchange</a></li>
+              <li><a href="{{ '/ja/migration-midi1-to-midi2/' | relative_url }}" {% if page.url == '/ja/migration-midi1-to-midi2/' %}class="is-active"{% endif %}>MIDI 1.0 -> 2.0</a></li>
+            </ul>
+            {% elsif page.url == '/en/' or page.url contains '/en/' %}
+            <ul class="side-list">
+              <li><a href="{{ '/en/' | relative_url }}" {% if page.url == '/en/' %}class="is-active"{% endif %}>Documentation Index</a></li>
+              <li><a href="{{ '/en/fundamentals/' | relative_url }}" {% if page.url == '/en/fundamentals/' %}class="is-active"{% endif %}>Fundamentals</a></li>
+              <li><a href="{{ '/en/ump/' | relative_url }}" {% if page.url == '/en/ump/' %}class="is-active"{% endif %}>UMP</a></li>
+              <li><a href="{{ '/en/ci-profiles/' | relative_url }}" {% if page.url == '/en/ci-profiles/' %}class="is-active"{% endif %}>MIDI-CI</a></li>
+              <li><a href="{{ '/en/profiles/' | relative_url }}" {% if page.url == '/en/profiles/' %}class="is-active"{% endif %}>Profiles</a></li>
+              <li><a href="{{ '/en/property-exchange/' | relative_url }}" {% if page.url == '/en/property-exchange/' %}class="is-active"{% endif %}>Property Exchange</a></li>
+              <li><a href="{{ '/en/migration-midi1-to-midi2/' | relative_url }}" {% if page.url == '/en/migration-midi1-to-midi2/' %}class="is-active"{% endif %}>Migration 1.0 -> 2.0</a></li>
+            </ul>
+            {% else %}
+            <ul class="side-list">
+              <li><a href="{{ '/ja/' | relative_url }}">日本語ドキュメント</a></li>
+              <li><a href="{{ '/en/' | relative_url }}">English Documentation</a></li>
+            </ul>
+            {% endif %}
+          </div>
+          <div class="sidebar-bottom">
+            <h2>LINKS</h2>
+            <ul class="external-links">
+              <li><a href="https://midi2kit.dev/" target="_blank" rel="noopener noreferrer">midi2kit.dev</a></li>
+              <li><a href="https://github.com/midi2kit" target="_blank" rel="noopener noreferrer">GitHub / midi2kit</a></li>
+              <li><a href="https://github.com/midi2kit/MIDI2.0HOWTO" target="_blank" rel="noopener noreferrer">MIDI2.0HOWTO Repository</a></li>
+              <li><a href="https://midi.org/" target="_blank" rel="noopener noreferrer">MIDI Association</a></li>
+            </ul>
+          </div>
         </aside>
-        {% elsif page.url == '/en/' or page.url contains '/en/' %}
-        <aside class="sidebar" aria-label="Index">
-          <h2>INDEX</h2>
-          <ul class="side-list">
-            <li><a href="{{ '/en/' | relative_url }}" {% if page.url == '/en/' %}class="is-active"{% endif %}>Documentation Index</a></li>
-            <li><a href="{{ '/en/fundamentals/' | relative_url }}" {% if page.url == '/en/fundamentals/' %}class="is-active"{% endif %}>Fundamentals</a></li>
-            <li><a href="{{ '/en/ump/' | relative_url }}" {% if page.url == '/en/ump/' %}class="is-active"{% endif %}>UMP</a></li>
-            <li><a href="{{ '/en/ci-profiles/' | relative_url }}" {% if page.url == '/en/ci-profiles/' %}class="is-active"{% endif %}>MIDI-CI</a></li>
-            <li><a href="{{ '/en/profiles/' | relative_url }}" {% if page.url == '/en/profiles/' %}class="is-active"{% endif %}>Profiles</a></li>
-            <li><a href="{{ '/en/property-exchange/' | relative_url }}" {% if page.url == '/en/property-exchange/' %}class="is-active"{% endif %}>Property Exchange</a></li>
-            <li><a href="{{ '/en/migration-midi1-to-midi2/' | relative_url }}" {% if page.url == '/en/migration-midi1-to-midi2/' %}class="is-active"{% endif %}>Migration 1.0 -> 2.0</a></li>
-          </ul>
-        </aside>
-        {% endif %}
 
         <section class="content">
-          {% if page.lang == 'ja' %}
-          <p class="lang-badge">Language: 日本語</p>
-          {% elsif page.lang == 'en' %}
-          <p class="lang-badge">Language: English</p>
-          {% endif %}
-          {{ content }}
+          <article class="content-card">
+            {% if page.lang == 'ja' %}
+            <p class="lang-badge">Language: 日本語</p>
+            {% elsif page.lang == 'en' %}
+            <p class="lang-badge">Language: English</p>
+            {% endif %}
+            {{ content }}
+          </article>
         </section>
       </div>
     </main>
