@@ -22,6 +22,26 @@ GitHub Pages で公開できるようにし、将来の多言語化を前提と�
 3. `main` または `master` に push すると workflow が実行され、公開される
 4. リポジトリ名を変更した場合は `_config.yml` の `baseurl` も同じ値に更新する
 
+## 月次自動更新（対応状況ページ）
+- スクリプト: `scripts/update_midi2_support_status.sh`
+- 定期実行: `.github/workflows/monthly-midi2-support-status.yml`
+- 実行タイミング: 毎月1日 `00:15 UTC`（`schedule`）
+
+この自動更新で行うこと:
+- 当月の月次ページを生成（`ja/en`）
+- GitHub主要リポジトリのスター数/更新日を再取得
+- `ja/index.md` / `en/index.md` / `_layouts/default.html` の「対応状況」リンクを当月ページへ切替
+
+手動実行:
+```sh
+./scripts/update_midi2_support_status.sh
+```
+
+ネットワーク制限下で検証だけしたい場合:
+```sh
+ALLOW_NETWORK_FAILURE=1 ./scripts/update_midi2_support_status.sh
+```
+
 ## 多言語運用ルール
 - 言語ごとにディレクトリを分ける（例: `ja/`, `en/`）
 - URL は固定で運用する（例: `/ja/ump/`, `/en/ump/`）
