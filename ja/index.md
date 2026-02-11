@@ -16,8 +16,8 @@ permalink: /ja/
 7. [MIDI 1.0 から MIDI 2.0 への移行観点]({{ '/ja/migration-midi1-to-midi2/' | relative_url }})
 
 ## ステータス
-- `fundamentals.md`: 草案
-- `ump.md`: 草案
+- `fundamentals.md`: 詳細化済み（実装者向け初版）
+- `ump.md`: 詳細化済み（実装者向け初版）
 - `ci-profiles.md`: 詳細化済み（初版）
 - `discovery-deviceinfo-pe.md`: 詳細化済み（初版）
 - `profiles.md`: 詳細化済み（初版）
