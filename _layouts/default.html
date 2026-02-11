@@ -1,4 +1,13 @@
 <!doctype html>
+{% assign ja_switch_url = '/ja/' %}
+{% assign en_switch_url = '/en/' %}
+{% if page.url == '/ja/' or page.url contains '/ja/' %}
+  {% assign ja_switch_url = page.url %}
+  {% assign en_switch_url = page.url | replace_first: '/ja/', '/en/' %}
+{% elsif page.url == '/en/' or page.url contains '/en/' %}
+  {% assign en_switch_url = page.url %}
+  {% assign ja_switch_url = page.url | replace_first: '/en/', '/ja/' %}
+{% endif %}
 <html lang="{{ page.lang | default: 'ja' }}">
   <head>
     <meta charset="utf-8">
@@ -103,8 +112,8 @@
       <div class="wrap head">
         <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         <nav>
-          <a href="{{ '/ja/' | relative_url }}">日本語</a>
-          <a href="{{ '/en/' | relative_url }}">English</a>
+          <a href="{{ ja_switch_url | relative_url }}" data-lang="ja">日本語</a>
+          <a href="{{ en_switch_url | relative_url }}" data-lang="en">English</a>
         </nav>
       </div>
     </header>
@@ -121,5 +130,85 @@
     <footer>
       <div class="wrap foot">MIDI2.0 HOWTO</div>
     </footer>
+    <script>
+      (function () {
+        var STORAGE_KEY = "midi2howto_preferred_lang";
+        var SUPPORTED = ["ja", "en"];
+        var baseurl = {{ site.baseurl | jsonify }};
+
+        function normalizeLang(value) {
+          if (!value || typeof value !== "string") {
+            return null;
+          }
+          var normalized = value.toLowerCase().slice(0, 2);
+          return SUPPORTED.indexOf(normalized) >= 0 ? normalized : null;
+        }
+
+        function getPreferredFromNavigator() {
+          var candidates = (navigator.languages && navigator.languages.length > 0)
+            ? navigator.languages
+            : [navigator.language || "en"];
+          for (var i = 0; i < candidates.length; i += 1) {
+            var candidate = normalizeLang(candidates[i]);
+            if (candidate) {
+              return candidate;
+            }
+          }
+          return "en";
+        }
+
+        function stripBase(pathname) {
+          if (!baseurl) {
+            return pathname;
+          }
+          if (pathname.indexOf(baseurl) === 0) {
+            var stripped = pathname.slice(baseurl.length);
+            return stripped || "/";
+          }
+          return pathname;
+        }
+
+        function withBase(pathname) {
+          return (baseurl || "") + pathname;
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var queryLang = normalizeLang(params.get("lang"));
+        var storedLang = normalizeLang(window.localStorage.getItem(STORAGE_KEY));
+        var preferredLang = queryLang || storedLang || getPreferredFromNavigator();
+
+        window.localStorage.setItem(STORAGE_KEY, preferredLang);
+
+        var path = stripBase(window.location.pathname);
+        var isRoot = path === "/" || path === "/index.html" || path === "";
+        if (isRoot) {
+          var rootTarget = withBase("/" + preferredLang + "/");
+          if (window.location.pathname !== rootTarget) {
+            window.location.replace(rootTarget + window.location.search + window.location.hash);
+            return;
+          }
+        }
+
+        var localized = path.match(/^\/(ja|en)(\/.*)?$/);
+        if (localized && localized[1] !== preferredLang) {
+          var suffix = localized[2] || "/";
+          var switchTarget = withBase("/" + preferredLang + suffix);
+          if (window.location.pathname !== switchTarget) {
+            window.location.replace(switchTarget + window.location.search + window.location.hash);
+            return;
+          }
+        }
+
+        var switchLinks = document.querySelectorAll("a[data-lang]");
+        for (var i = 0; i < switchLinks.length; i += 1) {
+          switchLinks[i].addEventListener("click", function (event) {
+            var selected = normalizeLang(event.currentTarget.getAttribute("data-lang"));
+            if (selected) {
+              window.localStorage.setItem(STORAGE_KEY, selected);
+            }
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
