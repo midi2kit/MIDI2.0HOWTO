@@ -11,7 +11,13 @@ permalink: /ja/discovery-deviceinfo-pe/
 ## 1. 前提（どの仕様を基準にするか）
 - MIDI-CI は Core Collection 更新で **v1.2.1（2025-12-18 更新）**
 - PE は MIDI-CI の一部で、SysEx の Header Data / Property Data を使って Resource をやり取りする
-- 実際のプロパティ名や必須項目の厳密定義は、MIDI-CI本体と PE各仕様書（会員ダウンロード）で最終確認する
+- 実際のプロパティ名や必須項目の厳密定義は、MIDI-CI本体と PE各仕様書（MIDI.orgログイン後の会員ダウンロード）で最終確認する
+
+会員ダウンロードのリンク先:
+- [MIDI.org Membership](https://midi.org/membership)
+- [MIDI 2.0 Core Specification Collection](https://midi.org/midi-2-0-core-specification-collection)
+- [MIDI-CI Specification](https://midi.org/midi-ci-specification)
+- [MIDI 2.0 Property Exchange](https://midi.org/midi-2-0-property-exchange)
 
 ## 2. 実装の全体フロー（最短）
 1. UMP Endpoint / Function Block の把握（利用可能GroupとMIDI-CI可否を確認）
