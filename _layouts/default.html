@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'ja' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #fbfaf7;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --line: #d1d5db;
+        --accent: #0f766e;
+        --accent-soft: #dff5f1;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #f5f7f7 0%, #fbfaf7 240px);
+        color: var(--text);
+        font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+        line-height: 1.7;
+      }
+
+      .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: #ffffffc0;
+        backdrop-filter: blur(8px);
+      }
+
+      .head {
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .brand {
+        color: var(--text);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        gap: 12px;
+      }
+
+      nav a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      main {
+        padding: 28px 0 40px;
+      }
+
+      .lang-badge {
+        margin: 0 0 16px;
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border: 1px solid #b9ebe3;
+        border-radius: 999px;
+        padding: 3px 10px;
+      }
+
+      a {
+        color: #0f5ea8;
+      }
+
+      code {
+        background: #f3f4f6;
+        border-radius: 4px;
+        padding: 1px 4px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .foot {
+        padding: 16px 0 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap head">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav>
+          <a href="{{ '/ja/' | relative_url }}">日本語</a>
+          <a href="{{ '/en/' | relative_url }}">English</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      {% if page.lang == 'ja' %}
+      <p class="lang-badge">Language: 日本語</p>
+      {% elsif page.lang == 'en' %}
+      <p class="lang-badge">Language: English</p>
+      {% endif %}
+      {{ content }}
+    </main>
+
+    <footer>
+      <div class="wrap foot">MIDI2.0 HOWTO</div>
+    </footer>
+  </body>
+</html>

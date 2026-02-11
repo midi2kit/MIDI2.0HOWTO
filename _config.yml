@@ -1,0 +1,16 @@
+title: MIDI2.0 HOWTO
+description: Documentation hub for learning MIDI 2.0
+# Set to your repository path for project pages. Example: /MIDI2.0HOWTO
+baseurl: "/MIDI2.0HOWTO"
+url: ""
+timezone: Asia/Tokyo
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: pretty
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
