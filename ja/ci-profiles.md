@@ -76,9 +76,9 @@ MIDIメッセージで制御可能な値の現在状態を照会する仕組み�
 - [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
 
 ## 10. 参考リンク
-- MIDI-CI Specification: https://midi.org/midi-ci-specification
-- MIDI 2.0 詳説（MIDI-CI/Profiles/Property Exchange）: https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023
-- Property Exchange: https://midi.org/midi-2-0-property-exchange
-- Common Rules for MIDI-CI Profiles: https://midi.org/common-rules-for-midi-ci-profiles
-- Common Rules for MIDI-CI Property Exchange: https://midi.org/common-rules-for-midi-ci-property-exchange
-- MIDI 2.0 Core Specification Collection: https://midi.org/midi-2-0-core-specification-collection
+- [MIDI-CI Specification](https://midi.org/midi-ci-specification)
+- [MIDI 2.0 詳説（MIDI-CI/Profiles/Property Exchange）](https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023)
+- [Property Exchange](https://midi.org/midi-2-0-property-exchange)
+- [Common Rules for MIDI-CI Profiles](https://midi.org/common-rules-for-midi-ci-profiles)
+- [Common Rules for MIDI-CI Property Exchange](https://midi.org/common-rules-for-midi-ci-property-exchange)
+- [MIDI 2.0 Core Specification Collection](https://midi.org/midi-2-0-core-specification-collection)

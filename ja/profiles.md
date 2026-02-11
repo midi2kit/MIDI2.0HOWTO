@@ -61,6 +61,6 @@ Profiles は MIDI-CI の主要機能の1つです。
 - [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
 
 ## 9. 参考リンク
-- MIDI-CI Specification: https://midi.org/midi-ci-specification
-- Common Rules for MIDI-CI Profiles: https://midi.org/common-rules-for-midi-ci-profiles
-- 6 New Profile Specifications Adopted: https://midi.org/6-new-profile-specifications-adopted
+- [MIDI-CI Specification](https://midi.org/midi-ci-specification)
+- [Common Rules for MIDI-CI Profiles](https://midi.org/common-rules-for-midi-ci-profiles)
+- [6 New Profile Specifications Adopted](https://midi.org/6-new-profile-specifications-adopted)

@@ -61,6 +61,6 @@ MIDI Association の説明でよく出る基本操作は次です。
 - [Profiles（MIDI-CI Profile Configuration）]({{ '/ja/profiles/' | relative_url }})
 
 ## 9. 参考リンク
-- MIDI 2.0 Property Exchange: https://midi.org/midi-2-0-property-exchange
-- Common Rules for MIDI-CI Property Exchange: https://midi.org/common-rules-for-midi-ci-property-exchange
-- MIDI-CI Specification: https://midi.org/midi-ci-specification
+- [MIDI 2.0 Property Exchange](https://midi.org/midi-2-0-property-exchange)
+- [Common Rules for MIDI-CI Property Exchange](https://midi.org/common-rules-for-midi-ci-property-exchange)
+- [MIDI-CI Specification](https://midi.org/midi-ci-specification)
