@@ -178,6 +178,7 @@ Mitigation: reset session state and rerun Discovery
 Mitigation: use at least `MUID + requestId + resource` as correlation keys
 
 ## 9. Related pages
+- [What is MUID (MIDI Unique Identifier)?]({{ '/en/muid/' | relative_url }})
 - [MIDI-CI and Profiles]({{ '/en/ci-profiles/' | relative_url }})
 - [Discovery, DeviceInfo, and PE Procedure (Get/Set)]({{ '/en/discovery-deviceinfo-pe/' | relative_url }})
 - [Property Exchange (PE)]({{ '/en/property-exchange/' | relative_url }})

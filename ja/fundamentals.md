@@ -116,4 +116,5 @@ Disconnected
 ## 8. 関連ページ
 - [UMP（Universal MIDI Packet）とは？]({{ '/ja/ump/' | relative_url }})
 - [MIDI-CI と Profiles]({{ '/ja/ci-profiles/' | relative_url }})
+- [MUID（MIDI Unique Identifier）とは]({{ '/ja/muid/' | relative_url }})
 - [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})

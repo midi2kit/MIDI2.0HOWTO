@@ -116,4 +116,5 @@ Minimum fields to log:
 ## 8. Related pages
 - [What is UMP? (for Implementers)]({{ '/en/ump/' | relative_url }})
 - [MIDI-CI and Profiles]({{ '/en/ci-profiles/' | relative_url }})
+- [What is MUID (MIDI Unique Identifier)?]({{ '/en/muid/' | relative_url }})
 - [Discovery, DeviceInfo, and PE Procedure (Get/Set)]({{ '/en/discovery-deviceinfo-pe/' | relative_url }})

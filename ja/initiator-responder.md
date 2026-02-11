@@ -178,6 +178,7 @@ MIDI-CI は複数 peer が同時に関与し得るため、単一相手前提の
 対策: `MUID + requestId + resource` を最低キーにする
 
 ## 9. 関連ページ
+- [MUID（MIDI Unique Identifier）とは]({{ '/ja/muid/' | relative_url }})
 - [MIDI-CI と Profiles]({{ '/ja/ci-profiles/' | relative_url }})
 - [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
 - [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
