@@ -8,9 +8,6 @@ permalink: /ja/midi2-support-status-2026/
 
 このページは、2026-02-11 時点で公開情報から確認できる MIDI 2.0 対応状況を整理したものです。
 
-月次更新テンプレート:
-- [MIDI 2.0 対応状況 月次更新テンプレート]({{ '/ja/midi2-support-monthly-template/' | relative_url }})
-
 注意:
 - 「対応」は **OS API/ドライバ対応** と **DAW/アプリの実装対応** が別です。
 - DAWは「一部機能対応（例: CVM, PE, Profile）」と「全面対応」を分けて見る必要があります。

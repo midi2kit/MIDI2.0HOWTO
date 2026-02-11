@@ -12,10 +12,9 @@ permalink: /ja/
 3. [MIDI-CI と Profiles]({{ '/ja/ci-profiles/' | relative_url }})
 4. [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
 5. [MIDI 2.0 対応状況（2026-02）]({{ '/ja/midi2-support-status-2026-02/' | relative_url }})
-6. [MIDI 2.0 対応状況 月次更新テンプレート]({{ '/ja/midi2-support-monthly-template/' | relative_url }})
-7. [Profiles（MIDI-CI Profile Configuration）]({{ '/ja/profiles/' | relative_url }})
-8. [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
-9. [MIDI 1.0 から MIDI 2.0 への移行観点]({{ '/ja/migration-midi1-to-midi2/' | relative_url }})
+6. [Profiles（MIDI-CI Profile Configuration）]({{ '/ja/profiles/' | relative_url }})
+7. [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
+8. [MIDI 1.0 から MIDI 2.0 への移行観点]({{ '/ja/migration-midi1-to-midi2/' | relative_url }})
 
 ## ステータス
 - `fundamentals.md`: 詳細化済み（実装者向け初版）
@@ -23,7 +22,6 @@ permalink: /ja/
 - `ci-profiles.md`: 詳細化済み（初版）
 - `discovery-deviceinfo-pe.md`: 詳細化済み（初版）
 - `midi2-support-status-2026-02.md`: 詳細化済み（調査スナップショット）
-- `midi2-support-monthly-template.md`: 詳細化済み（運用テンプレート）
 - `profiles.md`: 詳細化済み（初版）
 - `property-exchange.md`: 詳細化済み（初版）
 - `migration-midi1-to-midi2.md`: 草案

@@ -2,6 +2,7 @@
 title: MIDI 2.0 対応状況 月次更新テンプレート
 lang: ja
 permalink: /ja/midi2-support-monthly-template/
+published: false
 ---
 
 # MIDI 2.0 対応状況 月次更新テンプレート

@@ -2,6 +2,7 @@
 title: MIDI 2.0 Support Status Monthly Update Template
 lang: en
 permalink: /en/midi2-support-monthly-template/
+published: false
 ---
 
 # MIDI 2.0 Support Status Monthly Update Template

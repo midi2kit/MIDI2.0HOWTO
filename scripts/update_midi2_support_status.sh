@@ -260,10 +260,7 @@ permalink: /ja/${REPORT_SLUG}/
 
 # MIDI 2.0 対応状況（${YEAR_MONTH} 月次更新）
 
-このページは月次更新テンプレートに基づいて自動生成されています。
-
-月次更新テンプレート:
-- [MIDI 2.0 対応状況 月次更新テンプレート]({{ '/ja/midi2-support-monthly-template/' | relative_url }})
+このページは月次フォーマットに基づいて自動生成されています。
 
 ## 更新情報
 - 更新日: \`${TODAY_UTC}\`
