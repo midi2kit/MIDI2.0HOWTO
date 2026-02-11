@@ -181,6 +181,7 @@ if canSet("X-ProgramEdit") {
 - [MIDI 2.0 Property Exchange](https://midi.org/midi-2-0-property-exchange)
 
 ## 10. 参考リンク
+- [Initiator / Responder 詳解（MIDI-CI 実装）]({{ '/ja/initiator-responder/' | relative_url }})
 - [Details about MIDI 2.0, MIDI-CI, Profiles and Property Exchange](https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023)
 - [MIDI 2.0 Device Design: Property Names and Mapping](https://midi.org/midi-2-0-device-design-property-names-and-mapping)
 - [MIDI-CI: Handling Multiple Initiators and Responders](https://midi.org/midi-ci-handling-multiple-initiators-and-responders)

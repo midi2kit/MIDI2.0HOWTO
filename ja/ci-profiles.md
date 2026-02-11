@@ -99,6 +99,7 @@ MUID未確定でレスポンス紐付けが崩れる。
 6. 再接続時の再問い合わせ
 
 ## 8. 関連ページ
+- [Initiator / Responder 詳解（MIDI-CI 実装）]({{ '/ja/initiator-responder/' | relative_url }})
 - [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
 - [Profiles（MIDI-CI Profile Configuration）]({{ '/ja/profiles/' | relative_url }})
 - [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})

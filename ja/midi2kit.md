@@ -76,6 +76,7 @@ permalink: /ja/midi2kit/
 ## 5. 関連ページ
 - [MIDI 2.0 基礎概念]({{ '/ja/fundamentals/' | relative_url }})
 - [MIDI2Kit 競合比較]({{ '/ja/midi2kit-competitive-comparison/' | relative_url }})
+- [Initiator / Responder 詳解（MIDI-CI 実装）]({{ '/ja/initiator-responder/' | relative_url }})
 - [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
 - [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
 
