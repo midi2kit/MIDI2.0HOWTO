@@ -4,61 +4,88 @@ lang: ja
 permalink: /ja/profiles/
 ---
 
-# Profiles（MIDI-CI Profile Configuration）
+# Profiles（MIDI-CI Profile Configuration / 実装者向け）
 
-## 1. Profiles とは
-Profiles は、**特定用途での MIDI メッセージの使い方を共通化するルールセット**です。  
-同じ Profile に対応した機器どうしは、解釈のズレが減り、接続してすぐ使える可能性が高くなります。
+Profiles は、メッセージ意味を機器間で揃えるための契約です。  
+実装では「どの Profile が現在有効か」を状態として管理することが中心になります。
 
-## 2. 何が解決されるか
-MIDI 1.0/2.0 どちらでも、機器ごとの設定差が大きいと相互運用で手作業が増えます。  
-Profiles は「この用途ではこのメッセージをこの意味で扱う」という共通前提を作り、次を改善します。
+## 1. 実装で扱う対象
 
-- 初期設定にかかる時間
-- 機器間の挙動差による混乱
-- マッピング調整の手戻り
+最低限必要な管理項目:
+- Profile ID
+- 対象チャネル/スコープ
+- 有効状態（on/off）
+- 反映時刻
+- 変更元（ローカル操作 / リモート通知）
 
-## 3. MIDI-CI 上での位置づけ
-Profiles は MIDI-CI の主要機能の1つです。  
-一般的には次の順で使います。
+Profile は単なる定数ではなく、接続中に変化するランタイム状態です。
 
-1. Discovery で相手の対応状況を確認
-2. Profile 機能の対応を確認
-3. 共通対応している Profile を有効化
-4. 非対応時は標準動作へフォールバック
+## 2. 実装フロー（最小）
 
-## 4. Profile の運用イメージ
-- 楽器や用途に合った Profile を選ぶ
-- 機器間で有効化状態を合わせる
-- 必要に応じて無効化して従来動作へ戻す
+1. Discovery 後に Profile 対応可否を確認
+2. 利用可能 Profile 一覧を取得
+3. 自アプリが対応する Profile のみ候補化
+4. 有効化/無効化要求を送信
+5. 応答に応じてローカル状態を更新
+6. 失敗時は標準動作へフォールバック
 
-この「有効化/無効化」を通信で明示的に扱えるのが実装上の利点です。
+## 3. 状態管理モデル
 
-## 5. 導入時の実装ポイント
-- `Profile管理` を `演奏処理` から分離する
-- どの Profile が有効かを状態として保持する
-- 切り替え時に関連パラメータを再初期化する
-- 未対応 Profile を受けたときの応答方針（無視/拒否）を決める
+推奨データ構造:
 
-## 6. つまずきやすい点
-- Profile を有効化したのに、アプリ側の表示が追従しない
-- 機器A/Bで「同名機能」の意味が微妙に異なる
-- セッション再接続時に Profile 状態がずれる
+```text
+ProfileState {
+  profile_id
+  scope            // global | channel | function-block
+  enabled
+  source           // local | remote
+  updated_at
+}
+```
 
-対策:
-- 状態同期イベントをログに残す
-- 再接続時に必ず再問い合わせする
-- フォールバック経路（Profile無効時）を常時維持する
+設計ポイント:
+- 演奏イベント処理と Profile 状態更新を分離する
+- Profile 切替中の一時状態（pending）を持つ
+- 接続断後は再問い合わせで再構築し、キャッシュの盲信を避ける
 
-## 7. 最小実装チェックリスト
-1. Profile 対応可否の問い合わせ
-2. 有効化/無効化の送受信
-3. 有効Profile状態の永続化または再同期
-4. 非対応時のフォールバック
+## 4. Profile有効化時の実務処理
+
+Profileを有効化したら、内部ルーティングとUI表示を同時更新します。
+
+1. 送信前: 対応可否と競合状態を確認
+2. 送信後: ACK/NAK を待機
+3. 成功時: ProfileState を更新し、UI/エンジンへ通知
+4. 失敗時: 旧状態に戻し、エラー理由をログ化
+
+## 5. PE との連携
+
+Profile切替と同時に PE を使うケースが多いです。
+
+- Profile: 振る舞い契約
+- PE: パラメータ/表示名/プリセット情報
+
+典型例:
+- Profile 有効化後に `ProgramList` / `ChannelList` を再取得
+- 必要に応じて `CurrentMode` や `State` を更新
+
+## 6. よくある実装バグ
+
+1. Profile状態をUIだけ更新して実処理が追従しない  
+2. 相手機器の拒否応答を無視して on 扱いにする  
+3. 再接続時に古い ProfileState をそのまま適用する  
+4. 非対応Profileを送信し続ける
+
+## 7. テスト項目
+
+1. 有効化/無効化の往復テスト
+2. 同一Profileの多重要求（競合）テスト
+3. 再接続時の再同期テスト
+4. 非対応機器とのフォールバックテスト
 
 ## 8. 関連ページ
 - [MIDI-CI と Profiles]({{ '/ja/ci-profiles/' | relative_url }})
 - [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
+- [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
 
 ## 9. 参考リンク
 - [MIDI-CI Specification](https://midi.org/midi-ci-specification)

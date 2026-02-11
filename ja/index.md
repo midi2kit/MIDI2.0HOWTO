@@ -6,6 +6,8 @@ permalink: /ja/
 
 # ドキュメント INDEX
 
+このドキュメント群は、MIDI 2.0 を実装するエンジニア/プログラマ向けに構成しています。
+
 ## 学習順序
 1. [MIDI 2.0 基礎概念]({{ '/ja/fundamentals/' | relative_url }})
 2. [MIDI2Kit とは？（できること・まだできないこと）]({{ '/ja/midi2kit/' | relative_url }})
@@ -22,13 +24,13 @@ permalink: /ja/
 - `fundamentals.md`: 詳細化済み（実装者向け初版）
 - `midi2kit.md`: 詳細化済み（機能整理初版）
 - `ump.md`: 詳細化済み（実装者向け初版）
-- `ci-profiles.md`: 詳細化済み（初版）
-- `discovery-deviceinfo-pe.md`: 詳細化済み（初版）
+- `ci-profiles.md`: 詳細化済み（実装者向け改訂）
+- `discovery-deviceinfo-pe.md`: 詳細化済み（実装者向け改訂）
 - `midi2-support-status-2026-02.md`: 詳細化済み（調査スナップショット）
 - `news.md`: 詳細化済み（ニュースウォッチ初版）
-- `profiles.md`: 詳細化済み（初版）
-- `property-exchange.md`: 詳細化済み（初版）
-- `migration-midi1-to-midi2.md`: 草案
+- `profiles.md`: 詳細化済み（実装者向け改訂）
+- `property-exchange.md`: 詳細化済み（実装者向け改訂）
+- `migration-midi1-to-midi2.md`: 詳細化済み（実装者向け改訂）
 
 ## English
 - [English index]({{ '/en/' | relative_url }})

@@ -30,6 +30,11 @@ permalink: /ja/midi2kit/
 - `Subscribe`（通知）対応
 - バッチ Set・パイプライン処理・ペイロード検証（公開ドキュメント記載）
 
+補足（X-Parameter系）:
+- `X-ParameterList` の取得で、`controlcc/name/default/min/max/category` を取得可能
+- `X-ProgramEdit` の取得で、現在プログラム名・カテゴリ・CC現在値を取得可能
+- 送信可能かは固定ではなく、`ResourceList` の `canSet` 判定で確認する運用が推奨
+
 ### 2.3 UMP / 変換系
 - MIDI 1.0 SysEx <-> UMP SysEx7(Data64) 変換
 - 分割された SysEx7 の再構成（アセンブラ）
