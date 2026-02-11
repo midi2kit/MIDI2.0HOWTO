@@ -58,6 +58,7 @@ MIDI Association の説明でよく出る基本操作は次です。
 
 ## 8. 関連ページ
 - [MIDI-CI と Profiles]({{ '/ja/ci-profiles/' | relative_url }})
+- [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
 - [Profiles（MIDI-CI Profile Configuration）]({{ '/ja/profiles/' | relative_url }})
 
 ## 9. 参考リンク

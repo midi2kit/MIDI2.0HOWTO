@@ -72,6 +72,7 @@ MIDIメッセージで制御可能な値の現在状態を照会する仕組み�
 4. Property Exchange の `Get` 1種類（読み取り専用）から開始
 
 ## 9. 深掘りページ
+- [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
 - [Profiles（MIDI-CI Profile Configuration）]({{ '/ja/profiles/' | relative_url }})
 - [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
 
