@@ -74,6 +74,61 @@
         padding: 28px 0 40px;
       }
 
+      .layout-grid {
+        display: grid;
+        grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 82px;
+        align-self: start;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #ffffffd9;
+        padding: 14px 14px 10px;
+      }
+
+      .sidebar h2 {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+      }
+
+      .side-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .side-list li {
+        margin: 0;
+      }
+
+      .side-list a {
+        display: block;
+        text-decoration: none;
+        border-radius: 8px;
+        padding: 6px 8px;
+        color: #0f5ea8;
+      }
+
+      .side-list a:hover {
+        background: #ecfeff;
+      }
+
+      .side-list a.is-active {
+        color: #0f766e;
+        background: #dff5f1;
+        font-weight: 700;
+      }
+
+      .content {
+        min-width: 0;
+      }
+
       .lang-badge {
         margin: 0 0 16px;
         display: inline-block;
@@ -105,6 +160,17 @@
       .foot {
         padding: 16px 0 24px;
       }
+
+      @media (max-width: 900px) {
+        .layout-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .sidebar {
+          position: static;
+        }
+      }
     </style>
   </head>
   <body>
@@ -119,12 +185,44 @@
     </header>
 
     <main class="wrap">
-      {% if page.lang == 'ja' %}
-      <p class="lang-badge">Language: 日本語</p>
-      {% elsif page.lang == 'en' %}
-      <p class="lang-badge">Language: English</p>
-      {% endif %}
-      {{ content }}
+      <div class="layout-grid">
+        {% if page.url == '/ja/' or page.url contains '/ja/' %}
+        <aside class="sidebar" aria-label="Index">
+          <h2>INDEX</h2>
+          <ul class="side-list">
+            <li><a href="{{ '/ja/' | relative_url }}" {% if page.url == '/ja/' %}class="is-active"{% endif %}>ドキュメント INDEX</a></li>
+            <li><a href="{{ '/ja/fundamentals/' | relative_url }}" {% if page.url == '/ja/fundamentals/' %}class="is-active"{% endif %}>MIDI 2.0 基礎概念</a></li>
+            <li><a href="{{ '/ja/ump/' | relative_url }}" {% if page.url == '/ja/ump/' %}class="is-active"{% endif %}>UMP</a></li>
+            <li><a href="{{ '/ja/ci-profiles/' | relative_url }}" {% if page.url == '/ja/ci-profiles/' %}class="is-active"{% endif %}>MIDI-CI</a></li>
+            <li><a href="{{ '/ja/profiles/' | relative_url }}" {% if page.url == '/ja/profiles/' %}class="is-active"{% endif %}>Profiles</a></li>
+            <li><a href="{{ '/ja/property-exchange/' | relative_url }}" {% if page.url == '/ja/property-exchange/' %}class="is-active"{% endif %}>Property Exchange</a></li>
+            <li><a href="{{ '/ja/migration-midi1-to-midi2/' | relative_url }}" {% if page.url == '/ja/migration-midi1-to-midi2/' %}class="is-active"{% endif %}>MIDI 1.0 -> 2.0</a></li>
+          </ul>
+        </aside>
+        {% elsif page.url == '/en/' or page.url contains '/en/' %}
+        <aside class="sidebar" aria-label="Index">
+          <h2>INDEX</h2>
+          <ul class="side-list">
+            <li><a href="{{ '/en/' | relative_url }}" {% if page.url == '/en/' %}class="is-active"{% endif %}>Documentation Index</a></li>
+            <li><a href="{{ '/en/fundamentals/' | relative_url }}" {% if page.url == '/en/fundamentals/' %}class="is-active"{% endif %}>Fundamentals</a></li>
+            <li><a href="{{ '/en/ump/' | relative_url }}" {% if page.url == '/en/ump/' %}class="is-active"{% endif %}>UMP</a></li>
+            <li><a href="{{ '/en/ci-profiles/' | relative_url }}" {% if page.url == '/en/ci-profiles/' %}class="is-active"{% endif %}>MIDI-CI</a></li>
+            <li><a href="{{ '/en/profiles/' | relative_url }}" {% if page.url == '/en/profiles/' %}class="is-active"{% endif %}>Profiles</a></li>
+            <li><a href="{{ '/en/property-exchange/' | relative_url }}" {% if page.url == '/en/property-exchange/' %}class="is-active"{% endif %}>Property Exchange</a></li>
+            <li><a href="{{ '/en/migration-midi1-to-midi2/' | relative_url }}" {% if page.url == '/en/migration-midi1-to-midi2/' %}class="is-active"{% endif %}>Migration 1.0 -> 2.0</a></li>
+          </ul>
+        </aside>
+        {% endif %}
+
+        <section class="content">
+          {% if page.lang == 'ja' %}
+          <p class="lang-badge">Language: 日本語</p>
+          {% elsif page.lang == 'en' %}
+          <p class="lang-badge">Language: English</p>
+          {% endif %}
+          {{ content }}
+        </section>
+      </div>
     </main>
 
     <footer>
