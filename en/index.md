@@ -15,13 +15,15 @@ This section is prepared for English translations of the documentation.
 4. [MIDI-CI and Profiles]({{ '/en/ci-profiles/' | relative_url }})
 5. [Discovery, DeviceInfo, and PE Procedure (Get/Set)]({{ '/en/discovery-deviceinfo-pe/' | relative_url }})
 6. [MIDI 2.0 Support Status (2026-02)]({{ '/en/midi2-support-status-2026-02/' | relative_url }})
-7. [Profiles (MIDI-CI Profile Configuration)]({{ '/en/profiles/' | relative_url }})
-8. [Property Exchange (PE)]({{ '/en/property-exchange/' | relative_url }})
-9. [Migration from MIDI 1.0 to MIDI 2.0]({{ '/en/migration-midi1-to-midi2/' | relative_url }})
+7. [MIDI 2.0 News (Releases, Articles, Reddit/X)]({{ '/en/news/' | relative_url }})
+8. [Profiles (MIDI-CI Profile Configuration)]({{ '/en/profiles/' | relative_url }})
+9. [Property Exchange (PE)]({{ '/en/property-exchange/' | relative_url }})
+10. [Migration from MIDI 1.0 to MIDI 2.0]({{ '/en/migration-midi1-to-midi2/' | relative_url }})
 
 ## Status
 - `fundamentals.md`: expanded (implementer-focused draft)
 - `midi2kit.md`: added (translation pending)
 - `ump.md`: expanded (implementer-focused draft)
 - `midi2-support-status-2026-02.md`: added (research snapshot, translation pending)
+- `news.md`: added (translation pending)
 - Other pages: translation in progress
