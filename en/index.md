@@ -18,4 +18,6 @@ This section is prepared for English translations of the documentation.
 7. [Migration from MIDI 1.0 to MIDI 2.0]({{ '/en/migration-midi1-to-midi2/' | relative_url }})
 
 ## Status
-- Translation in progress
+- `fundamentals.md`: expanded (implementer-focused draft)
+- `ump.md`: expanded (implementer-focused draft)
+- Other pages: translation in progress
