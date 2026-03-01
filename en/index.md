@@ -17,7 +17,7 @@ This section is prepared for English translations of the documentation.
 6. [What is MUID (MIDI Unique Identifier)?]({{ '/en/muid/' | relative_url }})
 7. [Initiator / Responder (MIDI-CI Implementation Guide)]({{ '/en/initiator-responder/' | relative_url }})
 8. [Discovery, DeviceInfo, and PE Procedure (Get/Set)]({{ '/en/discovery-deviceinfo-pe/' | relative_url }})
-9. [MIDI 2.0 Support Status (2026-02)]({{ '/en/midi2-support-status-2026-02/' | relative_url }})
+5. [MIDI 2.0 Support Status (2026-03)]({{ '/en/midi2-support-status-2026-03/' | relative_url }})
 10. [MIDI 2.0 News (Releases, Articles, Reddit/X)]({{ '/en/news/' | relative_url }})
 11. [Profiles (MIDI-CI Profile Configuration)]({{ '/en/profiles/' | relative_url }})
 12. [Property Exchange (PE)]({{ '/en/property-exchange/' | relative_url }})
@@ -30,6 +30,6 @@ This section is prepared for English translations of the documentation.
 - `ump.md`: expanded (implementer-focused draft)
 - `muid.md`: expanded (implementer-focused draft)
 - `initiator-responder.md`: expanded (implementer-focused draft)
-- `midi2-support-status-2026-02.md`: added (research snapshot, translation pending)
+- `midi2-support-status-2026-03.md`: added (research snapshot, translation pending)
 - `news.md`: added (translation pending)
 - Other pages: translation in progress
