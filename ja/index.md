@@ -17,7 +17,7 @@ permalink: /ja/
 6. [MUID（MIDI Unique Identifier）とは]({{ '/ja/muid/' | relative_url }})
 7. [Initiator / Responder 詳解（MIDI-CI 実装）]({{ '/ja/initiator-responder/' | relative_url }})
 8. [Discovery・DeviceInfo・PE 実装手順（Get/Set）]({{ '/ja/discovery-deviceinfo-pe/' | relative_url }})
-5. [MIDI 2.0 対応状況（2026-03）]({{ '/ja/midi2-support-status-2026-03/' | relative_url }})
+5. [MIDI 2.0 対応状況（2026-06）]({{ '/ja/midi2-support-status-2026-06/' | relative_url }})
 10. [MIDI 2.0 News（ニュースリリース・記事・Reddit/X）]({{ '/ja/news/' | relative_url }})
 11. [Profiles（MIDI-CI Profile Configuration）]({{ '/ja/profiles/' | relative_url }})
 12. [Property Exchange（PE）]({{ '/ja/property-exchange/' | relative_url }})
@@ -32,7 +32,7 @@ permalink: /ja/
 - `muid.md`: 詳細化済み（実装者向け初版）
 - `initiator-responder.md`: 詳細化済み（実装者向け初版）
 - `discovery-deviceinfo-pe.md`: 詳細化済み（実装者向け改訂）
-- `midi2-support-status-2026-03.md`: 詳細化済み（調査スナップショット）
+- `midi2-support-status-2026-06.md`: 詳細化済み（調査スナップショット）
 - `news.md`: 詳細化済み（ニュースウォッチ初版）
 - `profiles.md`: 詳細化済み（実装者向け改訂）
 - `property-exchange.md`: 詳細化済み（実装者向け改訂）
